@@ -77,15 +77,8 @@ class WTFormsDynamicFields():
 
     @staticmethod
     def iteritems(dict):
-        """ Refusing to use a possible memory hugging
-        Python2 .items() method. So for providing
-        both Python2 and 3 support, setting up iteritems()
-        as either items() in 3 or iteritems() in 2.
-        """
-        if sys.version_info[0] >= 3:
             return dict.items()
-        else:
-            return dict.iteritems()
+
 
     def process(self, form, post):
         """ Process the given WTForm Form object.
