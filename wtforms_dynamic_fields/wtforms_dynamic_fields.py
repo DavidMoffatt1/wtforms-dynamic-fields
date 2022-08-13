@@ -77,7 +77,7 @@ class WTFormsDynamicFields():
 
     @staticmethod
     def iteritems(dict):
-            return dict.items()
+        return dict.items()
 
 
     def process(self, form, post):
