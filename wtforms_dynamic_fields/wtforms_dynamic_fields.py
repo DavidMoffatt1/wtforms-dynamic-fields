@@ -76,7 +76,7 @@ class WTFormsDynamicFields():
                                  'Did you forget to add it?'.format(name))
 
     @staticmethod
-    def iteritems(dict):
+    def iteritems1(dict):
         return dict.items()
 
 
@@ -107,7 +107,7 @@ class WTFormsDynamicFields():
         class F(form):
             pass
 
-        for field, data in post.iteritems():
+        for field, data in post.iteritems1():
             if field in F():
                 # Skip it if the POST field is one of the standard form fields.
                 continue
@@ -171,7 +171,7 @@ class WTFormsDynamicFields():
                             # If we are currently in a set, append the set number
                             # to all the words that are decorated with %'s within
                             # the arguments.
-                            for key, arg in self.iteritems(self._dyn_fields[field_cname]\
+                            for key, arg in self.iteritems1(self._dyn_fields[field_cname]\
                                 [validator.__name__]['kwargs']):
                                 try:
                                     arg = re_field_name.sub(r'\1'+'_'+current_set_number,
